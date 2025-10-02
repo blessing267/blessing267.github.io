@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blessing Omokaro – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto text-center py-16">
+    <h1 class="text-4xl font-bold">Blessing Omokaro</h1>
+    <p class="mt-4 text-lg text-gray-600">
+      MSc in Computing (Cloud Computing) at Sheffield Hallam University<br>
+      Python • Django • Microsoft Azure Developer
+    </p>
+    <div class="mt-6">
+      <a href="mailto:your-email@example.com" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="max-w-4xl mx-auto py-12 px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center">Skills</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 bg-white rounded-full shadow">Python</span>
+      <span class="px-4 py-2 bg-white rounded-full shadow">Django</span>
+      <span class="px-4 py-2 bg-white rounded-full shadow">Microsoft Azure</span>
+      <span class="px-4 py-2 bg-white rounded-full shadow">MySQL</span>
+      <span class="px-4 py-2 bg-white rounded-full shadow">GitHub</span>
+      <span class="px-4 py-2 bg-white rounded-full shadow">HTML/CSS/Bootstrap</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="max-w-4xl mx-auto py-12 px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      <!-- Project 1 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg p-6">
+        <h3 class="text-xl font-semibold">FarmMarket (Dissertation)</h3>
+        <p class="mt-2 text-gray-600">
+          A cloud-hosted Django platform connecting farmers with buyers in Oyo State.
+        </p>
+        <div class="mt-3 flex gap-4">
+          <a href="https://your-live-link.com" class="text-blue-600 hover:underline">Live Demo</a>
+          <a href="https://github.com/yourusername/farmmarket" class="text-blue-600 hover:underline">GitHub</a>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg p-6">
+        <h3 class="text-xl font-semibold">Ardent Horizon University Portal</h3>
+        <p class="mt-2 text-gray-600">
+          A student module-registration web app built with Django and Azure MySQL.
+        </p>
+        <div class="mt-3 flex gap-4">
+          <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+          <a href="https://github.com/yourusername/django-app" class="text-blue-600 hover:underline">GitHub</a>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg p-6">
+        <h3 class="text-xl font-semibold">Lily Beauty Bar</h3>
+        <p class="mt-2 text-gray-600">
+          A Django e-commerce prototype showcasing beauty products with Stripe integration.
+        </p>
+        <div class="mt-3 flex gap-4">
+          <a href="https://lilybeautybar.onrender.com" class="text-blue-600 hover:underline">Live Demo</a>
+          <a href="https://github.com/yourusername/lilybeautybar" class="text-blue-600 hover:underline">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="max-w-4xl mx-auto text-center py-12">
+    <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+    <p class="text-gray-600 mb-6">
+      Email: <a href="mailto:your-email@example.com" class="text-blue-600 hover:underline">your-email@example.com</a> <br>
+      LinkedIn: <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a>
+    </p>
+  </section>
+
+</body>
+</html>
