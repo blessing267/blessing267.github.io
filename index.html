@@ -2,117 +2,1280 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blessing Omokaro – Portfolio</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfolio of Blessing Omokaro, a full-stack developer specialising in Django, React, WordPress, WooCommerce and cloud technologies."
+  >
+
+  <title>Blessing Omokaro | Full-Stack Developer</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F7F3ED",
+            paper: "#FFFDF9",
+            ink: "#1F2528",
+            muted: "#626A6D",
+            terracotta: "#B75D3E",
+            terracottaDark: "#8F412B",
+            sage: "#78866B",
+            sand: "#E7DDD1"
+          },
+          boxShadow: {
+            soft: "0 18px 50px rgba(31, 37, 40, 0.08)",
+            card: "0 12px 35px rgba(31, 37, 40, 0.10)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #B75D3E;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: #B75D3E;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: #FFFDF9;
+      border: 1px solid rgba(183, 93, 62, 0.12);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(
+        90deg,
+        #B75D3E,
+        #D7956C,
+        #78866B
+      );
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 55px rgba(31, 37, 40, 0.13);
+      border-color: rgba(183, 93, 62, 0.28);
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 0.9rem;
+      background: #F7F3ED;
+      color: #1F2528;
+      border: 1px solid #E7DDD1;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 650;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.75rem;
+      background: rgba(183, 93, 62, 0.09);
+      color: #8F412B;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 750;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.78rem 1.15rem;
+      background: #B75D3E;
+      color: white;
+      border-radius: 0.75rem;
+      font-weight: 750;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .primary-button:hover {
+      background: #8F412B;
+      transform: translateY(-2px);
+    }
+
+    .secondary-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.78rem 1.15rem;
+      background: transparent;
+      color: #1F2528;
+      border: 1px solid #CFC2B5;
+      border-radius: 0.75rem;
+      font-weight: 750;
+      transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .secondary-button:hover {
+      border-color: #B75D3E;
+      color: #B75D3E;
+      transform: translateY(-2px);
+    }
+
+    .status-complete {
+      display: inline-flex;
+      padding: 0.4rem 0.75rem;
+      background: rgba(120, 134, 107, 0.14);
+      color: #526048;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .status-progress {
+      display: inline-flex;
+      padding: 0.4rem 0.75rem;
+      background: rgba(183, 93, 62, 0.12);
+      color: #8F412B;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: #B75D3E;
+      border-radius: 9999px;
+      box-shadow: 0 0 0 5px rgba(183, 93, 62, 0.12);
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 0.34rem;
+      top: 1.5rem;
+      bottom: -2rem;
+      width: 1px;
+      background: #D8CCC0;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-  <!-- Blue Navbar (empty for now) -->
-<nav class="bg-blue-600 h-16 flex items-center justify-between px-6">
-  <!-- Left (logo placeholder) -->
-  <div></div>
-  <!-- Right (links placeholder) -->
-  <div></div>
-</nav>
+<body class="bg-cream text-ink antialiased">
 
-  <!-- Hero Section -->
-  <section class="max-w-5xl mx-auto text-center py-20 px-4">
-    <h1 class="text-5xl font-extrabold tracking-tight">Blessing Omokaro</h1>
-    <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-      MSc in Computing (Cloud Computing), Sheffield Hallam University <br>
-      Passionate about building scalable web applications with <span class="font-semibold">Python, Django, and Cloud Services</span>.
-    </p>
-    <div class="mt-8 flex justify-center gap-4">
-  <!-- Call button -->
-  <a href="tel:+447881155367" 
-     class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-     Contact Me
-  </a>
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-sand/70 bg-cream/95 backdrop-blur">
 
-  <!-- View CV button -->
-  <a href="https://drive.google.com/file/d/1sLWDZdoTQsyiq4YQMskFGM6uywGBcrf1/view?usp=sharing" 
-     target="_blank" 
-     class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-     View CV
-  </a>
-</div>
+    <nav
+      class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between"
+      aria-label="Main navigation"
+    >
 
-  </section>
+      <a
+        href="#home"
+        class="text-xl font-black tracking-tight"
+      >
+        Blessing<span class="text-terracotta">.</span>
+      </a>
 
-  <!-- Skills Section -->
-  <section class="max-w-5xl mx-auto py-16 px-6">
-    <h2 class="text-3xl font-bold mb-10 text-center">Skills</h2>
-    <div class="flex flex-wrap justify-center gap-3">
-      <span class="px-4 py-2 bg-white rounded-full shadow">Python</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">Django</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">Microsoft Azure</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">MySQL</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">PostgreSQL</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">GitHub</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">HTML/CSS/Bootstrap</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">JavaScript</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">Tailwind CSS</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">React</span>
-      <span class="px-4 py-2 bg-white rounded-full shadow">C#</span>
-    </div>
-  </section>
+      <div class="hidden md:flex items-center gap-8 text-sm font-bold">
 
-  <!-- Projects Section -->
-  <section class="max-w-5xl mx-auto py-16 px-6">
-    <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
-    <div class="grid gap-8 md:grid-cols-2">
-      
-      <!-- Project 1 -->
-      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-6">
-        <h3 class="text-xl font-semibold"><a href="https://farmmarket-eca8bbaygva3c0cg.uksouth-01.azurewebsites.net" target="_blank" class="text-blue-600 hover:underline">FarmMarket</a></h3>
-        <p class="mt-2 text-gray-600">A cloud-hosted Django platform connecting farmers with buyers and logistics agent</p>
-        <div class="mt-4 flex gap-4">
-          <a href="https://github.com/blessing267/repo" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
-        </div>
+        <a href="#about" class="hover:text-terracotta transition">
+          About
+        </a>
+
+        <a href="#projects" class="hover:text-terracotta transition">
+          Projects
+        </a>
+
+        <a href="#skills" class="hover:text-terracotta transition">
+          Skills
+        </a>
+
+        <a href="#experience" class="hover:text-terracotta transition">
+          Experience
+        </a>
+
+        <a href="#contact" class="hover:text-terracotta transition">
+          Contact
+        </a>
+
       </div>
 
-      <!-- Project 2 -->
-      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-6">
-        <h3 class="text-xl font-semibold"><a href="https://ardenthorizonuniversity-ehhscbggc0b0gzhm.uksouth-01.azurewebsites.net" target="_blank" class="text-blue-600 hover:underline">Ardent Horizon University Portal</a></h3>
-        <p class="mt-2 text-gray-600">A student module-registration web app built with Django and Azure MySQL.</p>
-        <div class="mt-4 flex gap-4">
-          <a href="https://github.com/blessing1-dev/django-app" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+      <a
+        href="https://drive.google.com/file/d/1sLWDZdoTQsyiq4YQMskFGM6uywGBcrf1/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="primary-button text-sm"
+      >
+        View CV
+      </a>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="relative overflow-hidden"
+    >
+
+      <div
+        class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-terracotta/10 blur-3xl"
+      ></div>
+
+      <div
+        class="absolute bottom-0 -left-24 w-96 h-96 rounded-full bg-sage/10 blur-3xl"
+      ></div>
+
+      <div
+        class="relative max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-[1.35fr_0.65fr] gap-16 items-center"
+      >
+
+        <div>
+
+          <p class="section-label">
+            Full-Stack Developer
+          </p>
+
+          <h1
+            class="mt-7 max-w-4xl text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight"
+          >
+            I build practical,
+            <span class="text-terracotta">scalable</span>
+            digital products.
+          </h1>
+
+          <p
+            class="mt-8 max-w-3xl text-lg sm:text-xl leading-relaxed text-muted"
+          >
+            I’m Blessing Omokaro, a full-stack developer and Cloud Computing
+            graduate. I develop responsive web applications, APIs and
+            e-commerce platforms using Django, React, WordPress and modern
+            cloud technologies.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+
+            <a href="#projects" class="primary-button">
+              Explore My Work
+            </a>
+
+            <a
+              href="mailto:blessingomokaro16@gmail.com"
+              class="secondary-button"
+            >
+              Contact Me
+            </a>
+
+          </div>
+
+          <div
+            class="mt-12 flex flex-wrap gap-x-10 gap-y-4 text-sm text-muted"
+          >
+
+            <p>
+              <span class="font-black text-ink">MSc</span>
+              Computing
+            </p>
+
+            <p>
+              <span class="font-black text-ink">3×</span>
+              Microsoft certified
+            </p>
+
+            <p>
+              <span class="font-black text-ink">Database</span>
+              Award
+            </p>
+
+          </div>
+
         </div>
+
+        <!-- Profile summary card -->
+        <aside
+          class="relative bg-ink text-white rounded-[2rem] p-8 sm:p-10 shadow-soft"
+        >
+
+          <div
+            class="absolute -top-4 -right-4 w-20 h-20 border-2 border-terracotta rounded-2xl rotate-12"
+          ></div>
+
+          <p class="text-sm uppercase tracking-[0.2em] text-sand">
+            What I bring
+          </p>
+
+          <h2 class="mt-5 text-3xl font-black leading-tight">
+            Development from idea to deployment.
+          </h2>
+
+          <div class="mt-8 space-y-6 text-gray-300">
+
+            <div>
+              <p class="font-bold text-white">
+                Software Development
+              </p>
+
+              <p class="mt-1 text-sm leading-relaxed">
+                Frontend interfaces, backend systems, REST APIs and databases.
+              </p>
+            </div>
+
+            <div>
+              <p class="font-bold text-white">
+                Cloud and DevOps
+              </p>
+
+              <p class="mt-1 text-sm leading-relaxed">
+                Azure services, Virtual Machines, GitHub Actions and CI/CD deployment.
+              </p>
+            </div>
+
+            <div>
+              <p class="font-bold text-white">
+                E-commerce development
+              </p>
+
+              <p class="mt-1 text-sm leading-relaxed">
+                Django, Paystack, WordPress, WooCommerce, ACF, Timber and Twig.
+              </p>
+            </div>
+
+          </div>
+
+        </aside>
+
       </div>
 
-      <!-- Project 3 -->
-      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-6">
-        <h3 class="text-xl font-semibold"><a href="https://lilybeautybar.onrender.com" target="_blank" class="text-blue-600 hover:underline">Lily Beauty Bar</a></h3>
-        <p class="mt-2 text-gray-600">An ongoing Django e-commerce platform showcasing beauty products with Stripe integration.</p>
-        <div class="mt-4 flex gap-4">
-          <a href="https://github.com/blessing267/lilybeautybar" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
+    </section>
+
+    <!-- About -->
+    <section
+      id="about"
+      class="bg-paper border-y border-sand/70"
+    >
+
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-10 py-24 grid lg:grid-cols-[0.75fr_1.25fr] gap-14"
+      >
+
+        <div>
+
+          <p class="section-label">
+            About Me
+          </p>
+
+          <h2 class="mt-6 text-4xl sm:text-5xl font-black tracking-tight">
+            More than just writing code.
+          </h2>
+
         </div>
+
+        <div class="space-y-6 text-lg leading-relaxed text-muted">
+
+          <p>
+            I’ve got with hands-on experience creating,
+            maintaining and deploying web applications. My work covers
+            frontend development, backend systems, databases, APIs,
+            authentication, payment integration and cloud deployment.
+          </p>
+
+          <p>
+            I enjoy turning real business requirements into reliable,
+            user-friendly software. I apply practices such as Git version
+            control, CI/CD, Agile development and test-driven development to
+            improve the quality and maintainability of my work.
+          </p>
+
+          <p>
+            Alongside development, my experience in customer-facing and
+            technical roles has strengthened my communication,
+            problem-solving, adaptability and attention to detail.
+          </p>
+
+        </div>
+
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <footer class="bg-blue-600 text-white py-6 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-      <p class="mb-6">
-        Email: <a href="mailto:blessingomokaro16@gmail.com" class="underline hover:text-gray-200">blessingomokaro16@gmail.com</a><br>
-        LinkedIn: <a href="https://linkedin.com/in/blessing-omokaro" target="_blank" class="underline hover:text-gray-200">linkedin.com/in/blessing-omokaro</a><br>
-        GitHub: <a href="http://github.com/blessing267" class="underline hover:text-gray-200">github.com/blessing267</a>
+    <!-- Projects -->
+    <section
+      id="projects"
+      class="max-w-7xl mx-auto px-6 lg:px-10 py-24"
+    >
+
+      <div
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14"
+      >
+
+        <div>
+
+          <p class="section-label">
+            Selected Work
+          </p>
+
+          <h2 class="mt-6 text-4xl sm:text-5xl font-black tracking-tight">
+            Featured projects
+          </h2>
+
+        </div>
+
+        <p class="max-w-2xl text-muted text-lg leading-relaxed">
+          Projects demonstrating my experience across e-commerce,
+          multi-role platforms, cloud services, payments, APIs and content
+          management systems.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Lily Beauty Bar -->
+        <article class="project-card flex flex-col overflow-hidden p-0">
+        
+          <!-- Screenshot -->
+          <a href="https://lilybeautybar.onrender.com" target="_blank" rel="noopener noreferrer" class="block overflow-hidden">
+        
+            <img src="img/lilybeautybar.png" alt="Lily Beauty Bar homepage"
+              class="w-full h-auto block transition duration-300 hover:scale-105">
+        
+          </a>
+        
+          <!-- Card Content -->
+          <div class="p-8 flex flex-col flex-grow">
+        
+            <div class="flex items-start justify-between gap-5">
+        
+              <div>
+        
+                <p class="text-sm font-bold text-terracotta">
+                  01
+                </p>
+        
+                <h3 class="mt-3 text-3xl font-black">
+                  Lily Beauty Bar
+                </h3>
+        
+              </div>
+        
+            </div>
+        
+            <p class="mt-6 text-muted leading-relaxed">
+              A full-stack e-commerce application with responsive interfaces,
+              product management, customer authentication, secure checkout,
+              Paystack payment integration and automated deployment.
+            </p>
+        
+            <ul class="mt-6 space-y-2 text-sm text-muted">
+        
+              <li>• Product and inventory CRUD functionality</li>
+              <li>• Paystack payment and checkout integration</li>
+              <li>• REST API authentication and live frontend updates</li>
+              <li>• Automated deployment through GitHub and Render</li>
+        
+            </ul>
+        
+            <div class="mt-7 flex flex-wrap gap-2">
+        
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">REST API</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Render</span>
+        
+            </div>
+        
+            <div class="mt-auto pt-8 flex flex-wrap gap-3">
+        
+              <a href="https://lilybeautybar.onrender.com" target="_blank" rel="noopener noreferrer" class="primary-button">
+                Live
+              </a>
+        
+              <a href="https://github.com/blessing267/lilybeautybar" target="_blank" rel="noopener noreferrer"
+                class="secondary-button">
+                GitHub
+              </a>
+        
+            </div>
+        
+          </div>
+        
+        </article>
+
+        <!-- FarmMarket -->
+        <article class="project-card flex flex-col overflow-hidden p-0">
+        
+          <!-- Screenshot -->
+          <a href="https://farmmarket-duaqhkb6aefvbcf5.ukwest-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" class="block overflow-hidden">
+        
+            <img src="img/farmmarket.png" alt="FarmMarket homepage"
+              class="w-full h-auto block transition duration-300 hover:scale-105">
+        
+          </a>
+        
+          <!-- Card Content -->
+          <div class="p-8 flex flex-col flex-grow">
+        
+            <div class="flex items-start justify-between gap-5">
+        
+              <div>
+        
+                <p class="text-sm font-bold text-terracotta">
+                  02
+                </p>
+        
+                <h3 class="mt-3 text-3xl font-black">
+                  FarmMarket
+                </h3>
+        
+              </div>
+        
+            </div>
+        
+            <p class="mt-6 text-muted leading-relaxed">
+              A multi-role marketplace designed to connect vendors, buyers and
+              logistics agents through product listings, communication and
+              delivery-management features.
+            </p>
+        
+            <ul class="mt-6 space-y-2 text-sm text-muted">
+        
+              <li>• Role-based functionality for different users</li>
+              <li>• Weather API and multilingual support</li>
+              <li>• Marketplace, ordering and logistics workflow</li>
+              <li>• Responsive user interface with SQL data storage</li>
+        
+            </ul>
+        
+            <div class="mt-7 flex flex-wrap gap-2">
+        
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Azure</span>
+              <span class="tech-pill">SQL</span>
+              <span class="tech-pill">APIs</span>
+        
+            </div>
+        
+            <div class="mt-auto pt-8 flex flex-wrap gap-3">
+        
+              <a href="https://farmmarket-duaqhkb6aefvbcf5.ukwest-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" class="primary-button">
+                Live
+              </a>
+        
+              <a href="https://github.com/blessing267/repo" target="_blank" rel="noopener noreferrer"
+                class="secondary-button">
+                GitHub
+              </a>
+        
+            </div>
+        
+          </div>
+        
+        </article>
+        
+        <!-- Ardent Horizon University -->
+        <article class="project-card flex flex-col overflow-hidden p-0">
+        
+          <!-- Screenshot -->
+          <a href="https://ardenthorizonuniversity-fuangtatg6fma5ee.ukwest-01.azurewebsites.net/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden">
+        
+            <img src="img/AHU.png" alt="AHU homepage"
+              class="w-full h-auto block transition duration-300 hover:scale-105">
+        
+          </a>
+        
+          <!-- Card Content -->
+          <div class="p-8 flex flex-col flex-grow">
+        
+            <div class="flex items-start justify-between gap-5">
+        
+              <div>
+        
+                <p class="text-sm font-bold text-terracotta">
+                  03
+                </p>
+        
+                <h3 class="mt-3 text-3xl font-black">
+                  Ardent Horizon University
+                </h3>
+        
+              </div>
+        
+            </div>
+        
+            <p class="mt-6 text-muted leading-relaxed">
+              A cloud-based university portal supporting student module
+              registration, application configuration and automated
+              communications.
+            </p>
+        
+            <ul class="mt-6 space-y-2 text-sm text-muted">
+        
+              <li>• Student module-registration workflow</li>
+              <li>• Azure App Service deployment and configuration</li>
+              <li>• CI/CD using GitHub Actions</li>
+              <li>• Azure Functions and SendGrid email notifications</li>
+        
+            </ul>
+        
+            <div class="mt-7 flex flex-wrap gap-2">
+        
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">Azure</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">GitHub Actions</span>
+              <span class="tech-pill">SendGrid</span>
+        
+            </div>
+        
+            <div class="mt-auto pt-8 flex flex-wrap gap-3">
+        
+              <a href="https://ardenthorizonuniversity-fuangtatg6fma5ee.ukwest-01.azurewebsites.net/" target="_blank" rel="noopener noreferrer" class="primary-button">
+                Live
+              </a>
+        
+              <a href="https://github.com/blessing267/django-app" target="_blank" rel="noopener noreferrer"
+                class="secondary-button">
+                GitHub
+              </a>
+        
+            </div>
+        
+          </div>
+        
+        </article>
+        
+        <!-- Dessert Affairs -->
+        <article class="project-card flex flex-col overflow-hidden p-0">
+        
+          <!-- Screenshot -->
+          <a href="#" target="_blank" rel="noopener noreferrer" class="block overflow-hidden">
+        
+            <img src="img/Dessertaffairs.png" alt="Dessert Affairs homepage"
+              class="w-full h-auto block transition duration-300 hover:scale-105">
+        
+          </a>
+        
+          <!-- Card Content -->
+          <div class="p-8 flex flex-col flex-grow">
+        
+            <div class="flex items-start justify-between gap-5">
+        
+              <div>
+        
+                <p class="text-sm font-bold text-terracotta">
+                  04
+                </p>
+        
+                <h3 class="mt-3 text-3xl font-black">
+                  Dessert Affairs
+                </h3>
+        
+              </div>
+        
+              <span class="status-progress">
+                Ongoing
+              </span>
+        
+            </div>
+        
+            <p class="mt-6 text-muted leading-relaxed">
+              A custom WordPress e-commerce website for a dessert business,
+              combining WooCommerce functionality with a bespoke Timber and
+              Twig-based theme.
+            </p>
+        
+            <ul class="mt-6 space-y-2 text-sm text-muted">
+        
+              <li>• Responsive custom WordPress theme</li>
+              <li>• Reusable Twig templates and modular SCSS</li>
+              <li>• WooCommerce product, cart and account integration</li>
+              <li>• Dynamic business content using WordPress and ACF</li>
+        
+            </ul>
+        
+            <div class="mt-7 flex flex-wrap gap-2">
+        
+              <span class="tech-pill">WordPress</span>
+              <span class="tech-pill">WooCommerce</span>
+              <span class="tech-pill">ACF</span>
+              <span class="tech-pill">Timber</span>
+              <span class="tech-pill">Twig</span>
+              <span class="tech-pill">SCSS</span>
+        
+            </div>
+        
+            <div class="mt-auto pt-8 flex flex-wrap gap-3">
+        
+              <a href="#" target="_blank" rel="noopener noreferrer" class="primary-button">
+                Live
+              </a>
+        
+              <a href="https://github.com/blessing267/dessert-affairs" target="_blank" rel="noopener noreferrer"
+                class="secondary-button">
+                GitHub
+              </a>
+        
+            </div>
+        
+          </div>
+        
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Skills -->
+    <section
+      id="skills"
+      class="bg-ink text-white"
+    >
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+
+        <div class="max-w-3xl">
+
+          <p class="section-label">
+            Technical Toolkit
+          </p>
+
+          <h2 class="mt-6 text-4xl sm:text-5xl font-black">
+            Technologies I work with
+          </h2>
+
+          <p class="mt-6 text-lg leading-relaxed text-gray-300">
+            My experience covers frontend development, backend engineering,
+            cloud infrastructure, content management, databases and modern
+            deployment workflows.
+          </p>
+
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+            <h3 class="text-lg font-black text-[#E5A17D]">
+              Frontend
+            </h3>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">SCSS</span>
+              <span class="skill-pill">Tailwind</span>
+              <span class="skill-pill">Bootstrap</span>
+              <span class="skill-pill">Axios</span>
+            </div>
+
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+            <h3 class="text-lg font-black text-[#E5A17D]">
+              Backend and APIs
+            </h3>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Django</span>
+              <span class="skill-pill">Django REST Framework</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">JWT</span>
+              <span class="skill-pill">CRUD</span>
+            </div>
+
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+            <h3 class="text-lg font-black text-[#E5A17D]">
+              Cloud and DevOps
+            </h3>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill-pill">Microsoft Azure</span>
+              <span class="skill-pill">AWS</span>
+              <span class="skill-pill">Virtual Machines</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">GitHub Actions</span>
+              <span class="skill-pill">Render</span>
+              <span class="skill-pill">CI/CD</span>
+            </div>
+
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+            <h3 class="text-lg font-black text-[#E5A17D]">
+              Data and CMS
+            </h3>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">SQLite</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">WordPress</span>
+              <span class="skill-pill">WooCommerce</span>
+              <span class="skill-pill">ACF</span>
+              <span class="skill-pill">Twig/Timber</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Certifications -->
+    <section class="bg-paper border-b border-sand/70">
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+
+        <div class="grid lg:grid-cols-[0.7fr_1.3fr] gap-14 items-start">
+
+          <div>
+
+            <p class="section-label">
+              Certifications
+            </p>
+
+            <h2 class="mt-6 text-4xl sm:text-5xl font-black tracking-tight">
+              Click on certification cards to view
+            </h2>
+
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+
+            <a href="https://drive.google.com/file/d/1dgxyrTPQeXc1BR-Hkq1Q3EL4hzUBey65/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                AZ-900
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                Azure Fundamentals
+              </h3>
+            
+            </a>
+
+            <a href="https://drive.google.com/file/d/17DuzbesqUkeirda2WfOtsYUOi0lQ8OEn/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                AI-900
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                Azure AI Fundamentals
+              </h3>
+            
+            </a>
+
+            <a href="https://drive.google.com/file/d/1eTW1P6AEa67jRcLyuOWOCDupyIpYlWTP/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                DP-900
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                Azure Data Fundamentals
+              </h3>
+            
+            </a>
+
+            <a href="https://drive.google.com/file/d/1kwVDVnA2-50WNiX-0Ep9eCucMLlizeIk/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                Sheffield Hallam University Award
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                Introduction to Databases and Big Data
+              </h3>
+            
+            </a>
+
+            <a href="https://drive.google.com/file/d/1vHlR_7hJOS-PtDF3vYiO7wZ2jADTYJ27/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                Sheffield Hallam University Certificate
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                MSc Computing
+              </h3>
+            
+            </a>
+
+            <a href="https://www.linkedin.com/in/blessing-omokaro/details/certifications/" target="_blank" rel="noopener noreferrer"
+              class="block rounded-2xl bg-cream border border-sand p-6 transition hover:-translate-y-1 hover:shadow-card">
+            
+              <p class="text-sm font-bold text-terracotta">
+                Other Certifications
+              </p>
+            
+              <h3 class="mt-3 text-xl font-black">
+                View additional certifications on LinkedIn
+              </h3>
+            
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Experience and education -->
+    <section
+      id="experience"
+      class="max-w-7xl mx-auto px-6 lg:px-10 py-24"
+    >
+
+      <div class="grid lg:grid-cols-2 gap-20">
+
+        <!-- Experience -->
+        <div>
+
+          <p class="section-label">
+            Experience
+          </p>
+
+          <h2 class="mt-6 text-4xl font-black tracking-tight">
+            Professional background
+          </h2>
+
+          <div class="mt-12 space-y-10">
+
+            <article class="timeline-item">
+
+              <p class="text-sm font-bold text-terracotta">
+                2025 – Present
+              </p>
+
+              <h3 class="mt-2 text-xl font-black">
+                Service Assistant
+              </h3>
+
+              <p class="mt-1 font-semibold text-muted">
+                KD Hospitality Limited
+              </p>
+
+              <p class="mt-3 text-muted leading-relaxed">
+                Delivering customer service in a fast-paced environment,
+                resolving enquiries and balancing multiple priorities while
+                maintaining accuracy and quality.
+              </p>
+
+            </article>
+
+            <article class="timeline-item">
+
+              <p class="text-sm font-bold text-terracotta">
+                2023 – 2024
+              </p>
+
+              <h3 class="mt-2 text-xl font-black">
+                Web Developer
+              </h3>
+
+              <p class="mt-1 font-semibold text-muted">
+                Sparrow Tech Wiz
+              </p>
+
+              <p class="mt-3 text-muted leading-relaxed">
+                Designed and developed responsive websites, maintained client
+                sites and troubleshot technical and performance issues.
+              </p>
+
+            </article>
+
+            <article class="timeline-item">
+
+              <p class="text-sm font-bold text-terracotta">
+                2022
+              </p>
+
+              <h3 class="mt-2 text-xl font-black">
+                Health Informatics Analyst
+              </h3>
+
+              <p class="mt-1 font-semibold text-muted">
+                Mountain Health Center
+              </p>
+
+              <p class="mt-3 text-muted leading-relaxed">
+                Collected, maintained and analysed records and produced
+                reports to support operational decision-making.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- Education -->
+        <div>
+
+          <p class="section-label">
+            Education
+          </p>
+
+          <h2 class="mt-6 text-4xl font-black tracking-tight">
+            Academic foundation
+          </h2>
+
+          <div class="mt-12 space-y-6">
+
+            <article
+              class="rounded-2xl bg-paper border border-sand p-7 shadow-soft"
+            >
+
+              <p class="text-sm font-bold text-terracotta">
+                2024 – 2025
+              </p>
+
+              <h3 class="mt-3 text-2xl font-black">
+                MSc Computing
+              </h3>
+
+              <p class="mt-2 text-muted">
+                Sheffield Hallam University
+              </p>
+
+              <p class="mt-4 leading-relaxed text-muted">
+                Specialised in Cloud Computing, with practical work involving
+                software development, cloud services, data and deployment.
+              </p>
+
+            </article>
+
+            <article
+              class="rounded-2xl bg-paper border border-sand p-7 shadow-soft"
+            >
+
+              <p class="text-sm font-bold text-terracotta">
+                2016 – 2022
+              </p>
+
+              <h3 class="mt-3 text-2xl font-black">
+                B.Eng Electrical/Electronic Engineering
+              </h3>
+
+              <p class="mt-2 text-muted">
+                Ambrose Alli University
+              </p>
+
+              <p class="mt-4 leading-relaxed text-muted">
+                Built a strong technical and analytical foundation through
+                engineering, electronics and practical problem-solving.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="px-6 lg:px-10 pb-10"
+    >
+
+      <div
+        class="max-w-7xl mx-auto rounded-[2rem] bg-terracotta text-white px-7 sm:px-12 py-14 sm:py-16"
+      >
+
+        <div
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+        >
+
+          <div class="max-w-3xl">
+
+            <p class="text-sm uppercase tracking-[0.18em] font-black text-white/75">
+              Let’s work together
+            </p>
+
+            <h2 class="mt-5 text-4xl sm:text-5xl font-black tracking-tight">
+              Looking for a developer with problem solving skills?
+            </h2>
+
+            <p class="mt-5 text-lg text-white/85 leading-relaxed">
+              I’m open to full-stack, backend, software and cloud
+              development opportunities.
+            </p>
+
+          </div>
+
+          <a
+            href="mailto:blelina16@gmail.com"
+            class="inline-flex justify-center px-7 py-4 bg-white text-terracottaDark rounded-xl font-black hover:bg-cream transition"
+          >
+            Send Me an Email
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-t border-sand pt-8"
+    >
+
+      <p class="text-sm text-muted">
+        © <span id="current-year"></span> Blessing Omokaro.
       </p>
+
+      <div class="flex flex-wrap gap-6 text-sm font-bold">
+
+        <a
+          href="mailto:blelina16@gmail.com"
+          class="hover:text-terracotta transition"
+        >
+          Email
+        </a>
+
+        <a
+          href="https://linkedin.com/in/blessing-omokaro"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-terracotta transition"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/blessing267"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-terracotta transition"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://drive.google.com/file/d/1sLWDZdoTQsyiq4YQMskFGM6uywGBcrf1/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-terracotta transition"
+        >
+          View CV
+        </a>
+
+      </div>
+
     </div>
+
   </footer>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
